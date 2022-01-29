@@ -2,14 +2,15 @@
 import React from 'react';
 
 export default function NewTodo(props) {
-  const [itemObject, modifyNewItem]= React.useState({
-    sno:0,
+
+  const [itemObject, modifyNewItem] = React.useState({
+    sno: 0,
     title: "",
-    desc:""
+    desc: ""
   });
 
-  function modifyFormData(event){
-    modifyNewItem(prevObject=>{
+  function modifyFormData(event) {
+    modifyNewItem(prevObject => {
       return {
         ...prevObject,
         [event.target.name]: event.target.value
@@ -17,22 +18,23 @@ export default function NewTodo(props) {
     })
   }
 
-  function addNewItem(event){
+  function addNewItem(event) {
     event.preventDefault() // stops whole page from reloading, which will loose the data
-    itemObject.sno = props.list.length+1//+1 beacuse numbering starts from 1
-    props.fun(prevObject=>[itemObject, ...prevObject])
+    itemObject.sno = props.list.length + 1 //+1 beacuse numbering starts from 1
+    props.fun(prevObject => [itemObject, ...prevObject])
+    // new item in latest
   }
 
   return (
     <div className='container'>
       <form onSubmit={addNewItem}>
         <div className="input-group mb-3">
-        <input type="text" name='title' onChange={modifyFormData} className="form-control" placeholder="task heading" aria-label="Username" aria-describedby="basic-addon1" />
+          <input type="text" name='title' onChange={modifyFormData} className="form-control" placeholder="task heading" aria-label="Username" aria-describedby="basic-addon1" />
         </div>
         <div>
-          <textarea name='desc' placeholder="description" onChange={modifyFormData} className="form-control" aria-label="With textarea"/>
+          <textarea name='desc' placeholder="description" onChange={modifyFormData} className="form-control" aria-label="With textarea" />
         </div>
-          <input className='btn btn-info' value='add new item' type='submit'/>
+        <input className='btn btn-info' value='add new item' type='submit' />
       </form>
     </div>
   );

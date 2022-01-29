@@ -1,4 +1,4 @@
-let data=[
+let data = [
   {
     sno: "1",
     title: "Coding exam",

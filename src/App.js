@@ -7,15 +7,16 @@ import NewTodo from './MyComponents/NewTodo';
 import TaskList from './tasks'
 
 function App() {
-  const [list, modifyList]= React.useState(TaskList);
-  const linkToCopyright='https://github.com/Akash-Trivedi';
-  
+  const [list, modifyList] = React.useState(TaskList);
+  const linkToCopyright = 'https://github.com/Akash-Trivedi';
+  console.log(list)
   return (
     <>
-    <Header title="Todo List"/>
-    <NewTodo list={list} fun={modifyList} />
-    <Todos list={list} fun={modifyList} />
-    <Footer link={linkToCopyright}/>
+      <Header title="Todo List" />
+      <NewTodo list={list} fun={modifyList} />
+      <br />
+      <Todos list={list} fun={modifyList} />
+      <Footer link={linkToCopyright} />
     </>
   );
 }
