@@ -9,7 +9,7 @@ import TaskList from './tasks'
 function App() {
   const [list, modifyList] = React.useState(TaskList);
   const linkToCopyright = 'https://github.com/Akash-Trivedi';
-  console.log(list)
+
   return (
     <>
       <Header title="Todo List" />
