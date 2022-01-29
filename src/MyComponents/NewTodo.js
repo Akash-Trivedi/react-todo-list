@@ -1,6 +1,9 @@
 // import { Button } from 'bootstrap';
 import React from 'react';
-
+/*
+if title and desc are empty then for two consecutive add creates warning for same key 
+i.e. sno
+ */
 export default function NewTodo(props) {
 
   const [itemObject, modifyNewItem] = React.useState({
@@ -20,9 +23,11 @@ export default function NewTodo(props) {
 
   function addNewItem(event) {
     event.preventDefault() // stops whole page from reloading, which will loose the data
-    itemObject.sno = props.list.length + 1 //+1 beacuse numbering starts from 1
-    props.fun(prevObject => [itemObject, ...prevObject])
-    // new item in latest
+    if (itemObject.title !== "") {
+      itemObject.sno = props.list.length + 1 //+1 beacuse numbering starts from 1
+      props.fun(prevObject => [itemObject, ...prevObject])
+      // new item in latest
+    }
   }
 
   return (

@@ -6,11 +6,13 @@ export default function Todos(props) {
 
   return (
     <div className='container'>
-      {props.list.length === 0 ? <EmptyTodo /> :
-        props.list.map((todo) => {
-          return <TodoItem list={props} item={todo} key={todo.sno} />
-        })
-      }
+      <div className="accordion" id="accordionExample">
+        {props.list.length === 0 ? <EmptyTodo /> :
+          props.list.map((todo) => {
+            return <TodoItem props1={props} item={todo} key={todo.sno} />
+          })
+        }
+      </div>
     </div>
   )
 }
