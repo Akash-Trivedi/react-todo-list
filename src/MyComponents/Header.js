@@ -11,6 +11,7 @@ export default function Header(props) {
         </button>
       </div>
       </nav>
+      <br/>
     </div>
   )
 }

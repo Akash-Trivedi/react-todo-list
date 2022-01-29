@@ -22,8 +22,8 @@ export default function Todo(props) {
       </h2>
       <div id={props.item.id} className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div className="accordion-body">
-          <button className='btn btn-tranparent btn-sm' style={{ marginLeft: "10rm" }} onClick={() => removeItem(props.item.sno)}>remove</button>
-          {props.item.desc}
+        <button className='btn btn-danger btn-sm' style={{ marginLeft: "10rm" , display:"block"}} onClick={() => removeItem(props.item.sno)}>remove</button>
+        {props.item.desc}
         </div>
       </div>
     </div>
