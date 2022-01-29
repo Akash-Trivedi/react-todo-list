@@ -18,8 +18,8 @@ export default function NewTodo(props) {
   }
 
   function addNewItem(event){
-    itemObject.sno = props.list.map()+1//+1 beacuse numbering starts from 1
     event.preventDefault() // stops whole page from reloading, which will loose the data
+    itemObject.sno = props.list.length+1//+1 beacuse numbering starts from 1
     props.fun(prevObject=>[itemObject, ...prevObject])
   }
 
