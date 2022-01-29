@@ -6,5 +6,5 @@ export default function EmptyTodo() {
   return (
     <div className='container'>
     </div>
-    );
+  );
 }
